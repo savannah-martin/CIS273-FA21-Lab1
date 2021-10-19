@@ -83,10 +83,10 @@ namespace KthToLast
             }
         }
 
-        // TODO
         public void Clear()
         {
-            throw new NotImplementedException();
+            Head = null;
+            Tail = null;
         }
 
         public bool Contains(T item)
@@ -126,10 +126,16 @@ namespace KthToLast
             throw new NotImplementedException();
         }
 
-        // TODO
         public IList<T> Reverse()
         {
-            throw new NotImplementedException();
+            var reversedList = new LinkedList<T>();
+
+            for( var currentNode = Head; currentNode != null; currentNode= currentNode.Next)
+            {
+                reversedList.Prepend(currentNode.Data);
+            }
+
+            return reversedList;
         }
 
         public override string ToString()
