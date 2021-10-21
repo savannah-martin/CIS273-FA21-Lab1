@@ -1,5 +1,5 @@
 ﻿using System;
-namespace KthToLast
+namespace PracticeExercise3
 {
 
     public class DoublyLinkedListNode<T>

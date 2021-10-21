@@ -1,48 +1,42 @@
 ﻿using System;
-namespace KthToLast
+namespace PracticeExercise2
 {
     public interface IList<T>
     {
-        // Add i to start of the list
-        void Prepend(T item);
+        int Length { get; }
+
+        bool IsEmpty { get; }
+
+        // TODO
+        T First { get; }
+        // TODO
+        T Last { get; }
 
         // Add i to end of list
         void Append(T item);
 
-        // Returns length of list 
-        int Length { get; }
+        // Add i to beginning of list
+        void Prepend(T item);
 
-        // Returns true if list contains no items.
-        bool IsEmpty { get; }
+        // Insert new value after first instance of exisiting value
+        // If existing value isn't found, then append to list.
+        void InsertAfter(T newValue, T existingValue);
 
-        // return first item in list
-        T First { get; }
+        // TODO
+        void InsertAt(T newValue, int index);
 
-        // return last item in list
-        T Last { get; }
+        int FirstIndexOf(T existingValue);
 
-        // Return the item at given index
-        T this[int index] { get; }
+        // TODO
+        void Remove(T value);
 
-        // Returns true if i is in list
-        bool Contains(T item);
-
-        // Remove the first item with value of i in the list
-        void Remove(T item);
-
-        // Remove item at given index
+        // TODO
         void RemoveAt(int index);
 
-        // Insert item i at given index
-        void InsertAt(int index, T item);
-
-        // Returns a new arraylist that's the reverse
-        IList<T> Reverse();
-
-        // Make the list empty
+        // TODO
         void Clear();
 
-        T KthToLast(int k);
+        // TODO
+        IList<T> Reverse();
     }
-
 }

@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Palindrome;
 using System;
+using System.Collections.Generic;
 
 namespace Palindrome
 {
@@ -10,37 +11,37 @@ namespace Palindrome
         [TestMethod]
         public void OneInt()
         {
-            DoublyLinkedList<int> doublyLinkedList = new DoublyLinkedList<int>();
-            doublyLinkedList.Append(0);
+            LinkedList<int> doublyLinkedList = new LinkedList<int>();
+            doublyLinkedList.AddLast(0);
             Assert.IsTrue(Program.IsPalindrome(doublyLinkedList));
         }
 
         [TestMethod]
         public void TwoInt()
         {
-            DoublyLinkedList<int> doublyLinkedList = new DoublyLinkedList<int>();
-            doublyLinkedList.Append(0);
-            doublyLinkedList.Append(0);
+            LinkedList<int> doublyLinkedList = new LinkedList<int>();
+            doublyLinkedList.AddLast(0);
+            doublyLinkedList.AddLast(0);
             Assert.IsTrue(Program.IsPalindrome(doublyLinkedList));
         }
 
         [TestMethod]
         public void ThreeInt()
         {
-            DoublyLinkedList<int> doublyLinkedList = new DoublyLinkedList<int>();
-            doublyLinkedList.Append(0);
-            doublyLinkedList.Append(1);
-            doublyLinkedList.Append(0);
+            LinkedList<int> doublyLinkedList = new LinkedList<int>();
+            doublyLinkedList.AddLast(0);
+            doublyLinkedList.AddLast(1);
+            doublyLinkedList.AddLast(0);
             Assert.IsTrue(Program.IsPalindrome(doublyLinkedList));
         }
 
         [TestMethod]
         public void ManyInt()
         {
-            DoublyLinkedList<int> doublyLinkedList = new DoublyLinkedList<int>();
+            LinkedList<int> doublyLinkedList = new LinkedList<int>();
             for (int i = -15; i < 16; i++)
             {
-                doublyLinkedList.Append(Math.Abs(i));
+                doublyLinkedList.AddLast(Math.Abs(i));
             }
             Assert.IsTrue(Program.IsPalindrome(doublyLinkedList));
         }
@@ -48,29 +49,29 @@ namespace Palindrome
         [TestMethod]
         public void TwoIntF()
         {
-            DoublyLinkedList<int> doublyLinkedList = new DoublyLinkedList<int>();
-            doublyLinkedList.Append(0);
-            doublyLinkedList.Append(1);
+            LinkedList<int> doublyLinkedList = new LinkedList<int>();
+            doublyLinkedList.AddLast(0);
+            doublyLinkedList.AddLast(1);
             Assert.IsFalse(Program.IsPalindrome(doublyLinkedList));
         }
 
         [TestMethod]
         public void ThreeIntF()
         {
-            DoublyLinkedList<int> doublyLinkedList = new DoublyLinkedList<int>();
-            doublyLinkedList.Append(3);
-            doublyLinkedList.Append(1);
-            doublyLinkedList.Append(0);
+            LinkedList<int> doublyLinkedList = new LinkedList<int>();
+            doublyLinkedList.AddLast(3);
+            doublyLinkedList.AddLast(1);
+            doublyLinkedList.AddLast(0);
             Assert.IsFalse(Program.IsPalindrome(doublyLinkedList));
         }
 
         [TestMethod]
         public void ManyIntF()
         {
-            DoublyLinkedList<int> doublyLinkedList = new DoublyLinkedList<int>();
+            LinkedList<int> doublyLinkedList = new LinkedList<int>();
             for (int i = 0; i < 16; i++)
             {
-                doublyLinkedList.Append(Math.Abs(i));
+                doublyLinkedList.AddLast(Math.Abs(i));
             }
             Assert.IsFalse(Program.IsPalindrome(doublyLinkedList));
         }
@@ -78,43 +79,43 @@ namespace Palindrome
         [TestMethod]
         public void TestString1()
         {
-            DoublyLinkedList<String> doublyLinkedList = new DoublyLinkedList<String>();
-            doublyLinkedList.Append("alex");
+            LinkedList<String> doublyLinkedList = new LinkedList<String>();
+            doublyLinkedList.AddLast("alex");
             Assert.IsTrue(Program.IsPalindrome(doublyLinkedList));
         }
 
         [TestMethod]
         public void TestString2()
         {
-            DoublyLinkedList<String> doublyLinkedList = new DoublyLinkedList<String>();
-            doublyLinkedList.Append("alex");
-            doublyLinkedList.Append("alex");
+            LinkedList<String> doublyLinkedList = new LinkedList<String>();
+            doublyLinkedList.AddLast("alex");
+            doublyLinkedList.AddLast("alex");
             Assert.IsTrue(Program.IsPalindrome(doublyLinkedList));
         }
 
         [TestMethod]
         public void TestString3()
         {
-            DoublyLinkedList<String> doublyLinkedList = new DoublyLinkedList<String>();
-            doublyLinkedList.Append("alex");
-            doublyLinkedList.Append("inner");
-            doublyLinkedList.Append("alex");
+            LinkedList<String> doublyLinkedList = new LinkedList<String>();
+            doublyLinkedList.AddLast("alex");
+            doublyLinkedList.AddLast("inner");
+            doublyLinkedList.AddLast("alex");
             Assert.IsTrue(Program.IsPalindrome(doublyLinkedList));
         }
 
         [TestMethod]
         public void TestString4()
         {
-            DoublyLinkedList<String> doublyLinkedList = new DoublyLinkedList<String>();
+            LinkedList<String> doublyLinkedList = new LinkedList<String>();
             for (int i = 2; i < 51; i++)
             {
                 if (i % 2 == 0)
                 {
-                    doublyLinkedList.Append("one");
+                    doublyLinkedList.AddLast("one");
                 }
                 else
                 {
-                    doublyLinkedList.Append("two");
+                    doublyLinkedList.AddLast("two");
                 }
             }
             Assert.IsTrue(Program.IsPalindrome(doublyLinkedList));
@@ -123,48 +124,48 @@ namespace Palindrome
         [TestMethod]
         public void TestStringUseEqualsF1()
         {
-            DoublyLinkedList<String> doublyLinkedList = new DoublyLinkedList<String>();
-            doublyLinkedList.Append("Alex");
-            doublyLinkedList.Append("inner");
-            doublyLinkedList.Append("alex");
+            LinkedList<String> doublyLinkedList = new LinkedList<String>();
+            doublyLinkedList.AddLast("Alex");
+            doublyLinkedList.AddLast("inner");
+            doublyLinkedList.AddLast("alex");
             Assert.IsFalse(Program.IsPalindrome(doublyLinkedList));
         }
 
         [TestMethod]
         public void TestStringF2()
         {
-            DoublyLinkedList<String> doublyLinkedList = new DoublyLinkedList<String>();
-            doublyLinkedList.Append("Alex");
-            doublyLinkedList.Append("inner");
-            doublyLinkedList.Append("tanner");
+            LinkedList<String> doublyLinkedList = new LinkedList<String>();
+            doublyLinkedList.AddLast("Alex");
+            doublyLinkedList.AddLast("inner");
+            doublyLinkedList.AddLast("tanner");
             Assert.IsFalse(Program.IsPalindrome(doublyLinkedList));
         }
 
         [TestMethod]
         public void TestStringF3()
         {
-            DoublyLinkedList<String> doublyLinkedList = new DoublyLinkedList<String>();
-            doublyLinkedList.Append("inner");
-            doublyLinkedList.Append("alex");
+            LinkedList<String> doublyLinkedList = new LinkedList<String>();
+            doublyLinkedList.AddLast("inner");
+            doublyLinkedList.AddLast("alex");
             Assert.IsFalse(Program.IsPalindrome(doublyLinkedList));
         }
 
         [TestMethod]
         public void TestStringF4()
         {
-            DoublyLinkedList<String> doublyLinkedList = new DoublyLinkedList<String>();
+            LinkedList<String> doublyLinkedList = new LinkedList<String>();
             for (int i = 3; i < 51; i++)
             {
                 if (i % 3 == 0)
                 {
-                    doublyLinkedList.Append("one");
+                    doublyLinkedList.AddLast("one");
                 }
                 else
                 {
-                    doublyLinkedList.Append("two");
+                    doublyLinkedList.AddLast("two");
                 }
             }
-            doublyLinkedList.Append("three");
+            doublyLinkedList.AddLast("three");
             Assert.IsFalse(Program.IsPalindrome(doublyLinkedList));
         }
     }

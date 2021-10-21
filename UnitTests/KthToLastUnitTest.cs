@@ -24,7 +24,7 @@ namespace KthToLast
         [TestMethod]
         public void DoubleInt1()
         {
-            LinkedList.DoublyLinkedList<int> linkedList = new LinkedList.DoublyLinkedList<int>();
+            DoublyLinkedList<int> linkedList = new DoublyLinkedList<int>();
             for (int i = 0; i <= 40; i++)
             {
                 linkedList.Append(i);
@@ -39,7 +39,7 @@ namespace KthToLast
         [TestMethod]
         public void SingleInt2()
         {
-            LinkedList.LinkedList<int> linkedList = new LinkedList.LinkedList<int>();
+            LinkedList<int> linkedList = new LinkedList<int>();
             linkedList.Append(0);
             Assert.AreEqual((0), linkedList.KthToLast(0));
         }
@@ -47,7 +47,7 @@ namespace KthToLast
         [TestMethod]
         public void DoubleInt2()
         {
-            LinkedList.DoublyLinkedList<int> linkedList = new LinkedList.DoublyLinkedList<int>();
+            DoublyLinkedList<int> linkedList = new DoublyLinkedList<int>();
             linkedList.Append(0);
             Assert.AreEqual((0), linkedList.KthToLast(0));
         }
@@ -55,7 +55,7 @@ namespace KthToLast
         [TestMethod]
         public void DoubleChar1()
         {
-            LinkedList.DoublyLinkedList<char> linkedList = new LinkedList.DoublyLinkedList<char>();
+            DoublyLinkedList<char> linkedList = new DoublyLinkedList<char>();
             linkedList.Append('a');
             Assert.AreEqual(('a'), linkedList.KthToLast(0));
         }
@@ -63,7 +63,7 @@ namespace KthToLast
         [TestMethod]
         public void SingleChar1()
         {
-            LinkedList.LinkedList<char> linkedList = new LinkedList.LinkedList<char>();
+            LinkedList<char> linkedList = new LinkedList<char>();
             linkedList.Append('a');
             Assert.AreEqual(('a'), linkedList.KthToLast(0));
         }
@@ -71,7 +71,7 @@ namespace KthToLast
         [TestMethod]
         public void DoubleChar2()
         {
-            LinkedList.DoublyLinkedList<char> linkedList = new LinkedList.DoublyLinkedList<char>();
+            DoublyLinkedList<char> linkedList = new DoublyLinkedList<char>();
             for (int i = 097; i < 123; i++)
             {
                 linkedList.Append((char)i);
@@ -86,7 +86,7 @@ namespace KthToLast
         [TestMethod]
         public void SingleChar2()
         {
-            LinkedList.LinkedList<char> linkedList = new LinkedList.LinkedList<char>();
+            LinkedList<char> linkedList = new LinkedList<char>();
             for (int i = 097; i < 123; i++)
             {
                 linkedList.Append((char)i);
@@ -101,7 +101,7 @@ namespace KthToLast
         [TestMethod]
         public void SingleString1()
         {
-            LinkedList.LinkedList<string> linkedList = new LinkedList.LinkedList<string>();
+            LinkedList<string> linkedList = new LinkedList<string>();
             linkedList.Append("test");
             Assert.AreEqual("test", linkedList.KthToLast(0));
         }
@@ -109,7 +109,7 @@ namespace KthToLast
         [TestMethod]
         public void DoubleString1()
         {
-            LinkedList.DoublyLinkedList<string> linkedList = new LinkedList.DoublyLinkedList<string>();
+            DoublyLinkedList<string> linkedList = new DoublyLinkedList<string>();
             linkedList.Append("test");
             Assert.AreEqual("test", linkedList.KthToLast(0));
         }
@@ -117,7 +117,7 @@ namespace KthToLast
         [TestMethod]
         public void SingleString2()
         {
-            LinkedList.LinkedList<string> linkedList = new LinkedList.LinkedList<string>();
+            LinkedList<string> linkedList = new LinkedList<string>();
             for (int i = 0; i <= 40; i++)
             {
                 linkedList.Append(i.ToString());
@@ -132,7 +132,7 @@ namespace KthToLast
         [TestMethod]
         public void DoubleString2()
         {
-            LinkedList.DoublyLinkedList<string> linkedList = new LinkedList.DoublyLinkedList<string>();
+            DoublyLinkedList<string> linkedList = new DoublyLinkedList<string>();
             for (int i = 0; i <= 40; i++)
             {
                 linkedList.Append(i.ToString());
