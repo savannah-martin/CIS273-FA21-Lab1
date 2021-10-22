@@ -1,5 +1,6 @@
 ﻿using System;
-namespace PracticeExercise2
+
+namespace KthToLast
 {
     public interface IList<T>
     {
