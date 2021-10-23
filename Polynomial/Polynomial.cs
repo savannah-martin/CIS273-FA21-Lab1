@@ -73,13 +73,53 @@ namespace Polynomial
                 sum.AddTerm(t.Coefficient, t.Power);
             }
 
+            /*if (sum.terms.First.Value.Coefficient == 0)
+            {
+                var currentNode = sum.terms.Last;
+
+                while (currentNode != null)
+                {
+                    sum.terms.RemoveLast();
+                    currentNode = currentNode.Previous;
+                }
+            }*/
+
+            var tempsum = new Polynomial();
+
+            foreach (Term x in sum.terms)
+            {
+                tempsum.terms.AddLast(x);
+            }
+
+            foreach (Term t in tempsum.terms)
+            {
+                if (t.Coefficient == 0)
+                {
+                    sum.terms.Remove(t);
+                }
+            }
+
             return sum;
         }
 
 
         public static Polynomial Subtract(Polynomial p1, Polynomial p2)
         {
-            return null;
+            Polynomial newp2 = new Polynomial();
+
+            var currentNode = p2.terms.First;
+
+            while (currentNode != null)
+            {
+                int tempPower = currentNode.Value.Power;
+                double tempCo = currentNode.Value.Coefficient;
+
+                Term NegTerm = new Term(tempPower, -tempCo);
+                newp2.terms.AddLast(NegTerm);
+                currentNode = currentNode.Next;
+            }
+            
+            return Add(p1, newp2);
         }
 
         public static Polynomial Negate(Polynomial p)
@@ -94,6 +134,11 @@ namespace Polynomial
 
         public override string ToString()
         {
+            if(NumberOfTerms == 0)
+            {
+                return "0";
+            }
+            
             string result = "";
 
             foreach( Term t in terms)

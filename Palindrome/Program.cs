@@ -23,7 +23,10 @@ namespace Palindrome
 
             var rList = new LinkedList<T>();
 
-            var currentNode = linkedList.First;
+            foreach (T x in linkedList)
+            {
+                rList.AddFirst(x);
+            }
 
             if (linkedList.Count == 1)
             {
