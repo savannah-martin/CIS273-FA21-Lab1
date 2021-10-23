@@ -142,6 +142,11 @@ namespace Polynomial
 
             foreach( Term t in terms)
             {
+                if (terms.First.Value == t)
+                {
+                    result += t.ToString();
+                }
+                
                 result += "+" + t.ToString();
             }
 
