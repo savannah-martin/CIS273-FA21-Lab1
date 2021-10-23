@@ -105,9 +105,14 @@ namespace Polynomial
 
         public static Polynomial Subtract(Polynomial p1, Polynomial p2)
         {
-            Polynomial newp2 = new Polynomial();
+            return Add(p1, Negate(p2));
+        }
 
-            var currentNode = p2.terms.First;
+        public static Polynomial Negate(Polynomial p)
+        {
+            Polynomial newp = new Polynomial();
+
+            var currentNode = p.terms.First;
 
             while (currentNode != null)
             {
@@ -115,16 +120,10 @@ namespace Polynomial
                 double tempCo = currentNode.Value.Coefficient;
 
                 Term NegTerm = new Term(tempPower, -tempCo);
-                newp2.terms.AddLast(NegTerm);
+                newp.terms.AddLast(NegTerm);
                 currentNode = currentNode.Next;
             }
-            
-            return Add(p1, newp2);
-        }
-
-        public static Polynomial Negate(Polynomial p)
-        {
-            return null;
+            return newp;
         }
 
         public static Polynomial Multiply(Polynomial p1, Polynomial p2)
