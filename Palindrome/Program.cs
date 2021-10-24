@@ -15,12 +15,16 @@ namespace Palindrome
                 doublyLinkedList.AddLast(Math.Abs(i));
             }
             IsPalindrome(doublyLinkedList);
-
         }
 
         public static bool IsPalindrome<T>(LinkedList<T> linkedList)
         {
 
+            if (linkedList.Count == 1)
+            {
+                return true;
+            }
+            
             var rList = new LinkedList<T>();
 
             foreach (T x in linkedList)
@@ -28,24 +32,27 @@ namespace Palindrome
                 rList.AddFirst(x);
             }
 
-            if (linkedList.Count == 1)
-            {
-                return true;
-            }
+            LinkedListNode<T> temp1 = linkedList.First;
+            LinkedListNode<T> temp2 = rList.First;
 
-            var pointer1 = rList.First;
-            var pointer2 = linkedList.First;
-
-            while (pointer1 == pointer2)
+            while (temp1 != null && temp2 != null)
             {
-                if(pointer1 != pointer2)
+                if (temp1.Value.Equals(temp2.Value))
+                {
+                    temp1 = temp1.Next;
+                    temp2 = temp2.Next;
+
+                }
+                else
                 {
                     return false;
                 }
-                
-                continue;
             }
-            return true;
+
+            if (temp1 == null && temp2 == null)
+                return true;
+
+            return false;
 
         }
     }

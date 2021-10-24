@@ -114,7 +114,7 @@ namespace Polynomial
 
             Term term2 = new Term(0, 3);
             polynomial.AddTerm(term2.Coefficient, term2.Power);
-            Assert.AreEqual("5.1", polynomial.ToString().Substring(0,3));
+            Assert.AreEqual("5.1", polynomial.ToString().Substring(0,3));/*?*/
         }
 
         [TestMethod]
@@ -153,7 +153,7 @@ namespace Polynomial
             Polynomial polynomialSum = Polynomial.Add(polynomial, polynomial2);
             Assert.AreEqual(2, polynomialSum.NumberOfTerms);
             Assert.AreEqual(1, polynomialSum.Degree);
-            Assert.AreEqual("+6x^1+4x^0", polynomialSum.ToString());
+            Assert.AreEqual("+6x^1+4x^0", polynomialSum.ToString());/*?*/
         }
 
         [TestMethod]
