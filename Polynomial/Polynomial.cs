@@ -128,7 +128,25 @@ namespace Polynomial
 
         public static Polynomial Multiply(Polynomial p1, Polynomial p2)
         {
-            return null;
+           var tempPoly = new Polynomial();
+           var product = new Polynomial();
+
+           foreach(Term x in p1.terms)
+           {
+                tempPoly.terms.AddLast(x);
+           }
+
+           foreach(Term y in tempPoly.terms)
+           {
+                foreach(Term x in p2.terms)
+                {
+                    var tempTerm = new Term(y.Power += x.Power, y.Coefficient * x.Coefficient);
+                    product.terms.AddLast(tempTerm);
+                }
+           }
+
+            return product;
+
         }
 
         public override string ToString()
