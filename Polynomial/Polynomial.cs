@@ -164,8 +164,10 @@ namespace Polynomial
                 {
                     result += t.ToString();
                 }
-                
+                else
+                {
                 result += "+" + t.ToString();
+                }
             }
 
             return result;
