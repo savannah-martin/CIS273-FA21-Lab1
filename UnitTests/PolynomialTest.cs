@@ -70,9 +70,10 @@ namespace Polynomial
         public void AddTermAndToString()
         {
             Polynomial polynomial = new Polynomial();
-            Term term1 = new Term(1, 2);
+            Term term1 = new Term(2, 0.0);
             polynomial.AddTerm(term1.Coefficient, term1.Power);
-            Assert.AreNotEqual(1, polynomial.ToString().Length);
+            Assert.AreEqual("0", polynomial.ToString());
+
         }
 
         [TestMethod]

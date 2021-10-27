@@ -162,10 +162,21 @@ namespace Polynomial
             {
                 if (terms.First.Value == t)
                 {
+                    if (t.Coefficient.Equals(0))
+                    {
+                        result += "0";
+                    }
+                    else
+                    {
                     result += t.ToString();
+                    }
                 }
                 else
+                if (t.Coefficient.Equals(0))
                 {
+                    result += "0";
+                }
+                else {
                 result += "+" + t.ToString();
                 }
             }
