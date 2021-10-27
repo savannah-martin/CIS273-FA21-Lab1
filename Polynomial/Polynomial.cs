@@ -21,6 +21,11 @@ namespace Polynomial
         {
             Term term = new Term(power, coefficient);
 
+            if (coefficient.Equals(0))
+            {
+                return;
+            }
+
             if (terms.Count == 0)
             {
                 terms.AddFirst(term);
@@ -151,32 +156,36 @@ namespace Polynomial
 
         public override string ToString()
         {
-            if(NumberOfTerms == 0)
+            var tempstring = new Polynomial();
+
+            foreach (Term x in terms)
+            {
+                tempstring.terms.AddLast(x);
+            }
+
+            foreach (Term t in tempstring.terms)
+            {
+                if (t.Coefficient == 0)
+                {
+                    tempstring.terms.Remove(t);
+                }
+            }
+
+            if (tempstring.NumberOfTerms == 0)
             {
                 return "0";
             }
-            
+           
             string result = "";
 
-            foreach( Term t in terms)
+            foreach( Term t in tempstring.terms)
             {
-                if (terms.First.Value == t)
+                if (tempstring.terms.First.Value == t)
                 {
-                    if (t.Coefficient.Equals(0))
-                    {
-                        result += "0";
-                    }
-                    else
-                    {
                     result += t.ToString();
-                    }
                 }
                 else
-                if (t.Coefficient.Equals(0))
                 {
-                    result += "0";
-                }
-                else {
                 result += "+" + t.ToString();
                 }
             }
